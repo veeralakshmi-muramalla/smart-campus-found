@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Campus Lost & Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🎒 Smart Campus Lost & Found</h1>
+        <p>Find what you lost. Return what you found.</p>
+    </header>
+
+    <nav>
+        <button onclick="showSection('home')">Home</button>
+        <button onclick="showSection('report')">Report Item</button>
+        <button onclick="showSection('items')">View Items</button>
+    </nav>
+
+    <section id="home" class="section">
+        <h2>Welcome to Smart Campus Lost & Found</h2>
+        <p>
+            Lost something on campus? Don't worry!
+            Report your lost item or help someone by reporting an item you found.
+        </p>
+
+        <div class="cards">
+            <div class="card">
+                <h3>📢 Lost Something?</h3>
+                <p>Report your lost item with its details.</p>
+            </div>
+
+            <div class="card">
+                <h3>📦 Found Something?</h3>
+                <p>Report the item so the owner can find it.</p>
+            </div>
+
+            <div class="card">
+                <h3>🔎 Find Items</h3>
+                <p>Search items reported by students.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="report" class="section hidden">
+        <h2>Report an Item</h2>
+
+        <form id="itemForm">
+
+            <label>Item Status</label>
+            <select id="status" required>
+                <option value="">Select</option>
+                <option value="Lost">Lost</option>
+                <option value="Found">Found</option>
+            </select>
+
+            <label>Item Name</label>
+            <input type="text" id="itemName"
+                   placeholder="Example: Black Wallet" required>
+
+            <label>Description</label>
+            <textarea id="description"
+                      placeholder="Describe the item"
+                      required></textarea>
+
+            <label>Location</label>
+            <input type="text" id="location"
+                   placeholder="Example: Computer Lab" required>
+
+            <label>Date</label>
+            <input type="date" id="date" required>
+
+            <label>Contact Number</label>
+            <input type="tel" id="contact"
+                   placeholder="Enter contact number" required>
+
+            <button type="submit" class="submit-btn">
+                Submit Report
+            </button>
+
+        </form>
+    </section>
+
+
+    <section id="items" class="section hidden">
+        <h2>🔎 Reported Items</h2>
+
+        <input type="text"
+               id="search"
+               placeholder="Search item..."
+               onkeyup="displayItems()">
+
+        <div id="itemList"></div>
+    </section>
+
+
+    <footer>
+        <p>💡 Idea Nirmann | Imagine • Innovate • Transform</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
